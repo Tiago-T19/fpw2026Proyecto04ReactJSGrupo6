@@ -7,7 +7,7 @@
   border: 3px solid #8a04c8;
   border-radius: 16px;
   box-shadow: 0 0 25px rgba(174, 0, 255, 0.45);
-  color: #ffffff;
+  color: #fffeff60;
   padding: 30px 20px;
 }
 
@@ -24,7 +24,7 @@
 .sr-input {
   background-color: #000000 !important;
   border: 2px solid #6b009c !important;
-  color: #ffffff !important;
+  color: #ee04da30 !important;
   border-radius: 8px !important;
 }
 
@@ -34,12 +34,12 @@
 }
 
 .sr-input::placeholder {
-  color: #8a73a0 !important;
+  color: #ffffff !important;
 }
 
 .sr-btn {
   background: linear-gradient(180deg, #b800ff 0%, #680091 100%) !important;
-  color: #ffffff !important;
+  color: #1f081a9c !important;
   border: 2px solid #ffd700 !important;
   border-radius: 8px !important;
   font-family: 'Montserrat', sans-serif !important;
@@ -76,7 +76,7 @@
   font-size: 85px;
   line-height: 1;
   margin: 10px 0;
-  color: #ffffff;
+  color: #1d154c;
   text-shadow: 0 0 20px #c800ff, 0 0 40px #8800ff;
 }
 
