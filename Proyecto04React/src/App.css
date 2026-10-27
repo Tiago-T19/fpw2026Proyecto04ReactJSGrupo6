@@ -1,65 +1,282 @@
-.contenedor {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #e3f2fd;
+* {
+  box-sizing: border-box;
 }
 
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  width: 500px;
-  text-align: center;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #f5f3ff;
+  background:
+    radial-gradient(ellipse at top, #30265d 0%, transparent 55%),
+    linear-gradient(145deg, #101225, #19182f 55%, #101225);
 }
+
+button,
+input {
+  font: inherit;
+}
+
+/*contenedor principal*/
+
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: 480px;
+  padding: 32px;
+  text-align: center;
+  background: rgba(30, 29, 57, 0.94);
+  border: 1px solid #45416d;
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+/* titulos y textos*/
+
+h1 {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  line-height: 1.2;
+  color: #ffffff;
+  letter-spacing: -1px;
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: 1.15rem;
+  color: #e8e1ff;
+}
+
+.tarjeta > p {
+  color: #bdb9dc;
+  line-height: 1.6;
+}
+
+/*formulario*/
 
 .formulario {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 26px;
+  padding: 22px;
+  text-align: left;
+  background: #252342;
+  border: 1px solid #403b67;
+  border-radius: 16px;
+  animation: aparecer 0.2s ease-out;
+}
+
+.formulario h2 {
+  text-align: center;
+}
+
+.formulario label {
+  margin-top: 5px;
+  color: #ded9f5;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .formulario input {
-  padding: 10px;
-  font-size: 16px;
+  width: 100%;
+  padding: 12px 14px;
+  color: #ffffff;
+  background: #19182f;
+  border: 1px solid #514a79;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.dado {
-  font-size: 120px;
-  margin: 20px 0;
+.formulario input::placeholder {
+  color: #8985a9;
 }
+
+.formulario input:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.15);
+}
+
+/*botones*/
 
 button {
-  background-color: #1976d2;
-  color: white;
+  padding: 12px 18px;
   border: none;
-  padding: 12px 25px;
-  border-radius: 10px;
-  font-size: 18px;
+  border-radius: 11px;
+  font-weight: 700;
   cursor: pointer;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-  background-color: #1565c0;
+  transform: translateY(-2px);
 }
 
-.rojo {
-  color: red;
+button:active {
+  transform: translateY(0);
 }
 
-.verde {
-  color: green;
+.boton-registro {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  color: #ffffff !important;
+  background-color: #514181 !important;
+  border: 1px solid #8270b8 !important;
+  border-radius: 11px;
+  opacity: 1 !important;
 }
 
-.azul {
-  color: dodgerblue;
+.boton-registro:hover {
+  color: #ffffff !important;
+  background-color: #65519a !important;
 }
 
-.jugador {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #f3f3f3;
-  border-radius: 10px;
+/*!important hace que tengan prioridad sobre el bootstrap*/
+/*necesario para este boton o no se ve*/
+
+/*zona del dado*/
+
+.zona-dado {
+  margin-top: 28px;
+  padding: 25px 18px;
+  background: linear-gradient(145deg, #292647, #211f3b);
+  border: 1px solid #464069;
+  border-radius: 18px;
+}
+
+.zona-dado h2 {
+  margin-bottom: 12px;
+}
+
+.dado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 145px;
+  color: #c4b5fd;
+  font-size: 7rem;
+  line-height: 1.2;
+  text-shadow: 0 0 30px rgba(167, 139, 250, 0.25);
+  animation: aparecer 0.25s ease-out;
+}
+
+.numero {
+  margin: 12px 0;
+  color: #ded9f5;
+  font-size: 1.1rem;
+}
+
+.numero strong {
+  color: #c4b5fd;
+  font-size: 1.35rem;
+}
+
+.mensaje {
+  min-height: 26px;
+  margin: 10px 0 20px;
+  color: #d7c9ff;
+  font-weight: 700;
+}
+
+.boton-lanzar {
+  width: 100%;
+  color: #ffffff;
+  background: linear-gradient(100deg, #7654d8, #9274ed);
+  box-shadow: 0 6px 20px rgba(118, 84, 216, 0.22);
+}
+
+.boton-lanzar:hover {
+  background: linear-gradient(100deg, #8969e9, #a18afa);
+  box-shadow: 0 8px 24px rgba(118, 84, 216, 0.35);
+}
+
+/*datos del jugador*/
+
+.resultado-jugador {
+  margin-top: 26px;
+  padding-top: 22px;
+  text-align: left;
+  border-top: 1px solid #403b60;
+}
+
+.resultado-jugador h2 {
+  text-align: center;
+}
+
+.datos-registrados {
+  padding: 14px 16px;
+  background: #252342;
+  border: 1px solid #403b67;
+  border-radius: 12px;
+}
+
+.datos-registrados p {
+  margin: 9px 0;
+  color: #ded9f5;
+  overflow-wrap: anywhere;
+}
+
+.datos-registrados strong {
+  color: #c4b5fd;
+}
+
+.ayuda {
+  color: #aaa5ca;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/*animación y pantallas pequeñas*/
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .pagina {
+    padding: 20px 12px;
+  }
+
+  .tarjeta {
+    padding: 22px 16px;
+    border-radius: 18px;
+  }
+
+  .formulario {
+    padding: 17px;
+  }
+
+  .dado {
+    min-height: 120px;
+    font-size: 6rem;
+  }
+}
+
+.tarjeta h1 {
+  color: #ffffff;
+}
+
+.tarjeta h2 {
+  color: #ffffff;
 }
