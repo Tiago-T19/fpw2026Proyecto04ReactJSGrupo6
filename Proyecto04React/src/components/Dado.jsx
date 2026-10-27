@@ -101,7 +101,7 @@ function Dado() {
           </>
         ) : (
           <div className="zona-dado text-center mt-4">
-            <section className="resultado-jugador mb-4 p-3 bg-light rounded">
+            <section className="resultado-jugador mb-4 p-3 rounded">
               <h4 className="mb-3">Jugador actual</h4>
               <div className="datos-registrados text-start">
                 <p className="mb-1"><strong>Nombre:</strong> {jugadorRegistrado.nombre} {jugadorRegistrado.apellido}</p>
